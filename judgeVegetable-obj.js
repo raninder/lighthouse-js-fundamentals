@@ -1,3 +1,4 @@
+
 const vegetables = [
   {
     submitter: 'Old Man Franklin',
@@ -16,19 +17,27 @@ const vegetables = [
   }
 ]
 
-const metric = 'redness'
+//const metric = 'redness'
 const judgeVegetable = function (vegetables, metric) {
-  // Yoifur code in here ...
+  let temp = 0;
+  let sub = 'C';
   if(metric === "redness"){
-    let temp = 0;
-    let s = "abc";
     for(let i = 0; i < vegetables.length; i++){
       if(vegetables[i].redness > temp){
         temp = vegetables[i].redness;
-        s = vegetables[i]. submitter;
+        sub = vegetables[i]. submitter;
       } 
     }
-    return s;
   }
-}
+  else {
+    for(let i = 0; i < vegetables.length; i++){
+      if(vegetables[i].plumpness > temp){
+        temp = vegetables[i].plumpness;
+        sub = vegetables[i]. submitter;
+      } 
+    }
+  } 
+  return sub;
+};
 console.log(judgeVegetable(vegetables, "redness"));
+
